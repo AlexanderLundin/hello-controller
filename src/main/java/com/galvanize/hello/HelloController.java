@@ -12,7 +12,10 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello(@RequestParam (required=false, defaultValue = "World") String name) {
-        return String.format("Hello [World | %s] from my first Spring Boot application, from sayHello", name);
+        if (name == ""){
+            name = "World";
+        }
+        return String.format("Hello %s from my first Spring Boot Application!", name);
     }
 
     @GetMapping("/greeting")
