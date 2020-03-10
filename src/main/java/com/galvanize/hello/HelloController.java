@@ -23,7 +23,7 @@ public class HelloController {
 
     @GetMapping("/{name}")
     public String sayHelloPath(@PathVariable (required = false) String name) {
-        return String.format("Hello %s, from sayHelloPath 2342", name == null ? "World" : name);
+        return String.format("Hello %s, from sayHelloPath", name == null ? "World" : name);
     }
 
     @PostMapping
